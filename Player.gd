@@ -3,14 +3,14 @@ extends KinematicBody2D
 #Newton's Curse
 const gravity = Vector2(0, 600)
 #movementvar
-const floor_normal = Vector2(0,-1)
-const slope_friction = 20
+const floornormal = Vector2(0,-1)
+const slopefriction = 20
 const spd = 100
 const jumplimit = 0.2
 var accel = 1
 var velocity = Vector2()
 var jump = false
-var jumpforce = 150
+var jumpforce = 200
 var jumpchance = 0
 
 func _ready():
@@ -20,8 +20,8 @@ func _ready():
 func _fixed_process(delta):
 	#Newton's intensifies
 	velocity += gravity * delta 
-	velocity = move_and_slide(velocity, floor_normal, slope_friction)
-	jumpchance += delta
+	velocity = move_and_slide(velocity, floornormal, slopefriction)
+	
 	
 	#Movement
 	var movement = 0
@@ -33,6 +33,7 @@ func _fixed_process(delta):
 	velocity.x = lerp(velocity.x, movement, accel)
 	
 	#defying newton
+	jumpchance += delta
 	if(is_move_and_slide_on_floor()):
 		jumpchance = 0
 	jump = jumpchance < jumplimit
