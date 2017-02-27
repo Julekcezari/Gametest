@@ -27,10 +27,13 @@ func _fixed_process(delta):
 	var movement = 0
 	if(Input.is_action_pressed("ui_right")):
 		movement += 1
+		get_node("Sprite").set_flip_h(true)
 	if(Input.is_action_pressed("ui_left")):
 		movement -= 1
+		get_node("Sprite").set_flip_h(false)
 	movement *= spd
 	velocity.x = lerp(velocity.x, movement, accel)
+
 	
 	#defying newton
 	jumpchance += delta
