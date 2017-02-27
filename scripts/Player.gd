@@ -12,16 +12,17 @@ var velocity = Vector2()
 var jump = false
 var jumpforce = 200
 var jumpchance = 0
-
+var wolf
+var reaction = 0
+var calm = 0.8
 func _ready():
 	set_fixed_process(true)
-	
+
 
 func _fixed_process(delta):
 	#Newton's intensifies
 	velocity += gravity * delta 
 	velocity = move_and_slide(velocity, floornormal, slopefriction)
-	
 	
 	#Movement
 	var movement = 0
@@ -43,3 +44,11 @@ func _fixed_process(delta):
 	if(jump && Input.is_action_pressed("ui_up")):
 		velocity.y -= jumpforce
 		jumpchance = jumplimit
+
+#self destruct game
+	if Input.is_key_pressed(81):
+		get_tree().quit()
+
+#restart game
+	if Input.is_key_pressed(82):
+		get_tree().reload_current_scene()
