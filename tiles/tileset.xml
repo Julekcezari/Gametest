@@ -3,39 +3,39 @@
 	<ext_resource path="res://sprites/Tiles/Tileset2.png" type="Texture" index="0"></ext_resource>
 	<resource type="RectangleShape2D" path="local://1">
 		<real name="custom_solver_bias"> 0 </real>
-		<vector2 name="extents"> 15.916, 15.9306 </vector2>
+		<vector2 name="extents"> 15.9998, 16 </vector2>
 
 	</resource>
 	<resource type="ConvexPolygonShape2D" path="local://2">
 		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="3"> 			-16, 16, -16, -14, 13, 18 </vector2_array>
+		<vector2_array name="points" len="4"> 			16, 16, 16, 28, -16, 28, -16, -16 </vector2_array>
 
 	</resource>
-	<resource type="RectangleShape2D" path="local://5">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2 name="extents"> 15.2868, 15.6241 </vector2>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://7">
+	<resource type="ConvexPolygonShape2D" path="local://3">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-11, 5.00005, 11, 5.00005, 11, 16, -11, 16 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://8">
+	<resource type="ConvexPolygonShape2D" path="local://4">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-13, 5.00005, 13, 5.00005, 13, 16, -13, 16 </vector2_array>
 
 	</resource>
+	<resource type="RectangleShape2D" path="local://5">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2 name="extents"> 15.9998, 16 </vector2>
+
+	</resource>
 	<resource type="ConvexPolygonShape2D" path="local://6">
 		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="3"> 			16, -14, 16, 16, -13, 18 </vector2_array>
+		<vector2_array name="points" len="4"> 			16, -16, 16, 25, -16, 25, -16, 16 </vector2_array>
 
 	</resource>
 	<main_resource>
 		<string name="0/name"> "grassblock" </string>
 		<resource name="0/texture" external="0">  </resource>
 		<vector2 name="0/tex_offset"> 0, 0 </vector2>
-		<resource name="0/material"></resource>		<rect2 name="0/region"> 192, 0, 32, 32 </rect2>
+		<resource name="0/material"></resource>		<rect2 name="0/region"> 32, 0, 32, 32 </rect2>
 		<vector2 name="0/occluder_offset"> 16, 16 </vector2>
 		<resource name="0/occluder"></resource>		<vector2 name="0/navigation_offset"> 16, 16 </vector2>
 		<resource name="0/navigation"></resource>		<vector2 name="0/shape_offset"> 16, 16 </vector2>
@@ -45,7 +45,7 @@
 		<string name="1/name"> "slopegrassblock" </string>
 		<resource name="1/texture" external="0">  </resource>
 		<vector2 name="1/tex_offset"> 0, 0 </vector2>
-		<resource name="1/material"></resource>		<rect2 name="1/region"> 160, 0, 32, 32 </rect2>
+		<resource name="1/material"></resource>		<rect2 name="1/region"> 128, 0, 32, 32 </rect2>
 		<vector2 name="1/occluder_offset"> 16, 16 </vector2>
 		<resource name="1/occluder"></resource>		<vector2 name="1/navigation_offset"> 16, 16 </vector2>
 		<resource name="1/navigation"></resource>		<vector2 name="1/shape_offset"> 16, 16 </vector2>
@@ -55,27 +55,27 @@
 		<string name="2/name"> "rock" </string>
 		<resource name="2/texture" external="0">  </resource>
 		<vector2 name="2/tex_offset"> 0, 0 </vector2>
-		<resource name="2/material"></resource>		<rect2 name="2/region"> 96, 0, 32, 32 </rect2>
+		<resource name="2/material"></resource>		<rect2 name="2/region"> 64, 32, 32, 32 </rect2>
 		<vector2 name="2/occluder_offset"> 16, 16 </vector2>
 		<resource name="2/occluder"></resource>		<vector2 name="2/navigation_offset"> 16, 16 </vector2>
 		<resource name="2/navigation"></resource>		<vector2 name="2/shape_offset"> 16, 16 </vector2>
 		<array name="2/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://7">  </resource>
+			<resource  resource_type="Shape2D" path="local://3">  </resource>
 		</array>
 		<string name="3/name"> "trunk" </string>
 		<resource name="3/texture" external="0">  </resource>
 		<vector2 name="3/tex_offset"> 0, 0 </vector2>
-		<resource name="3/material"></resource>		<rect2 name="3/region"> 64, 0, 32, 32 </rect2>
+		<resource name="3/material"></resource>		<rect2 name="3/region"> 32, 32, 32, 32 </rect2>
 		<vector2 name="3/occluder_offset"> 16, 16 </vector2>
 		<resource name="3/occluder"></resource>		<vector2 name="3/navigation_offset"> 16, 16 </vector2>
 		<resource name="3/navigation"></resource>		<vector2 name="3/shape_offset"> 16, 16 </vector2>
 		<array name="3/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://8">  </resource>
+			<resource  resource_type="Shape2D" path="local://4">  </resource>
 		</array>
 		<string name="4/name"> "dirtblock" </string>
 		<resource name="4/texture" external="0">  </resource>
 		<vector2 name="4/tex_offset"> 0, 0 </vector2>
-		<resource name="4/material"></resource>		<rect2 name="4/region"> 128, 0, 32, 32 </rect2>
+		<resource name="4/material"></resource>		<rect2 name="4/region"> 0, 0, 32, 32 </rect2>
 		<vector2 name="4/occluder_offset"> 16, 16 </vector2>
 		<resource name="4/occluder"></resource>		<vector2 name="4/navigation_offset"> 16, 16 </vector2>
 		<resource name="4/navigation"></resource>		<vector2 name="4/shape_offset"> 16, 16 </vector2>
@@ -85,7 +85,7 @@
 		<string name="5/name"> "grass" </string>
 		<resource name="5/texture" external="0">  </resource>
 		<vector2 name="5/tex_offset"> 0, 0 </vector2>
-		<resource name="5/material"></resource>		<rect2 name="5/region"> 32, 0, 32, 32 </rect2>
+		<resource name="5/material"></resource>		<rect2 name="5/region"> 160, 32, 32, 32 </rect2>
 		<vector2 name="5/occluder_offset"> 16, 16 </vector2>
 		<resource name="5/occluder"></resource>		<vector2 name="5/navigation_offset"> 16, 16 </vector2>
 		<resource name="5/navigation"></resource>		<vector2 name="5/shape_offset"> 0, 0 </vector2>
@@ -94,7 +94,7 @@
 		<string name="6/name"> "grassf" </string>
 		<resource name="6/texture" external="0">  </resource>
 		<vector2 name="6/tex_offset"> 0, 0 </vector2>
-		<resource name="6/material"></resource>		<rect2 name="6/region"> 0, 0, 32, 32 </rect2>
+		<resource name="6/material"></resource>		<rect2 name="6/region"> 96, 32, 32, 32 </rect2>
 		<vector2 name="6/occluder_offset"> 16, 16 </vector2>
 		<resource name="6/occluder"></resource>		<vector2 name="6/navigation_offset"> 16, 16 </vector2>
 		<resource name="6/navigation"></resource>		<vector2 name="6/shape_offset"> 0, 0 </vector2>
@@ -103,92 +103,61 @@
 		<string name="7/name"> "slopegrassblock2" </string>
 		<resource name="7/texture" external="0">  </resource>
 		<vector2 name="7/tex_offset"> 0, 0 </vector2>
-		<resource name="7/material"></resource>		<rect2 name="7/region"> 224, 0, 32, 32 </rect2>
+		<resource name="7/material"></resource>		<rect2 name="7/region"> 160, 0, 32, 32 </rect2>
 		<vector2 name="7/occluder_offset"> 16, 16 </vector2>
 		<resource name="7/occluder"></resource>		<vector2 name="7/navigation_offset"> 16, 16 </vector2>
 		<resource name="7/navigation"></resource>		<vector2 name="7/shape_offset"> 16, 16 </vector2>
 		<array name="7/shapes" len="1" shared="false">
 			<resource  resource_type="Shape2D" path="local://6">  </resource>
 		</array>
-		<string name="8/name"> "groundend2" </string>
+		<string name="8/name"> "Flowersr" </string>
 		<resource name="8/texture" external="0">  </resource>
 		<vector2 name="8/tex_offset"> 0, 0 </vector2>
-		<resource name="8/material"></resource>		<rect2 name="8/region"> 64, 32, 32, 32 </rect2>
+		<resource name="8/material"></resource>		<rect2 name="8/region"> 128, 32, 32, 32 </rect2>
 		<vector2 name="8/occluder_offset"> 16, 16 </vector2>
 		<resource name="8/occluder"></resource>		<vector2 name="8/navigation_offset"> 16, 16 </vector2>
-		<resource name="8/navigation"></resource>		<vector2 name="8/shape_offset"> 16, 16 </vector2>
-		<array name="8/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://5">  </resource>
+		<resource name="8/navigation"></resource>		<vector2 name="8/shape_offset"> 0, 0 </vector2>
+		<array name="8/shapes" len="0" shared="false">
 		</array>
-		<string name="9/name"> "groundend" </string>
+		<string name="9/name"> "grassend" </string>
 		<resource name="9/texture" external="0">  </resource>
 		<vector2 name="9/tex_offset"> 0, 0 </vector2>
-		<resource name="9/material"></resource>		<rect2 name="9/region"> 96, 32, 32, 32 </rect2>
+		<resource name="9/material"></resource>		<rect2 name="9/region"> 192, 0, 32, 32 </rect2>
 		<vector2 name="9/occluder_offset"> 16, 16 </vector2>
 		<resource name="9/occluder"></resource>		<vector2 name="9/navigation_offset"> 16, 16 </vector2>
 		<resource name="9/navigation"></resource>		<vector2 name="9/shape_offset"> 16, 16 </vector2>
 		<array name="9/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://5">  </resource>
+			<resource  resource_type="Shape2D" path="local://1">  </resource>
 		</array>
-		<string name="10/name"> "slopeground" </string>
+		<string name="10/name"> "grassend2" </string>
 		<resource name="10/texture" external="0">  </resource>
 		<vector2 name="10/tex_offset"> 0, 0 </vector2>
-		<resource name="10/material"></resource>		<rect2 name="10/region"> 128, 32, 32, 32 </rect2>
+		<resource name="10/material"></resource>		<rect2 name="10/region"> 0, 32, 32, 32 </rect2>
 		<vector2 name="10/occluder_offset"> 16, 16 </vector2>
 		<resource name="10/occluder"></resource>		<vector2 name="10/navigation_offset"> 16, 16 </vector2>
 		<resource name="10/navigation"></resource>		<vector2 name="10/shape_offset"> 16, 16 </vector2>
 		<array name="10/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://5">  </resource>
+			<resource  resource_type="Shape2D" path="local://1">  </resource>
 		</array>
-		<string name="11/name"> "slopeground2" </string>
+		<string name="11/name"> "grassend3" </string>
 		<resource name="11/texture" external="0">  </resource>
 		<vector2 name="11/tex_offset"> 0, 0 </vector2>
-		<resource name="11/material"></resource>		<rect2 name="11/region"> 160, 32, 32, 32 </rect2>
+		<resource name="11/material"></resource>		<rect2 name="11/region"> 96, 0, 32, 32 </rect2>
 		<vector2 name="11/occluder_offset"> 16, 16 </vector2>
 		<resource name="11/occluder"></resource>		<vector2 name="11/navigation_offset"> 16, 16 </vector2>
 		<resource name="11/navigation"></resource>		<vector2 name="11/shape_offset"> 16, 16 </vector2>
 		<array name="11/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://5">  </resource>
+			<resource  resource_type="Shape2D" path="local://1">  </resource>
 		</array>
-		<string name="12/name"> "grassend" </string>
+		<string name="12/name"> "grassend4" </string>
 		<resource name="12/texture" external="0">  </resource>
 		<vector2 name="12/tex_offset"> 0, 0 </vector2>
-		<resource name="12/material"></resource>		<rect2 name="12/region"> 32, 32, 32, 32 </rect2>
+		<resource name="12/material"></resource>		<rect2 name="12/region"> 64, 0, 32, 32 </rect2>
 		<vector2 name="12/occluder_offset"> 16, 16 </vector2>
 		<resource name="12/occluder"></resource>		<vector2 name="12/navigation_offset"> 16, 16 </vector2>
 		<resource name="12/navigation"></resource>		<vector2 name="12/shape_offset"> 16, 16 </vector2>
 		<array name="12/shapes" len="1" shared="false">
 			<resource  resource_type="Shape2D" path="local://1">  </resource>
-		</array>
-		<string name="13/name"> "grassend2" </string>
-		<resource name="13/texture" external="0">  </resource>
-		<vector2 name="13/tex_offset"> 0, 0 </vector2>
-		<resource name="13/material"></resource>		<rect2 name="13/region"> 0, 32, 32, 32 </rect2>
-		<vector2 name="13/occluder_offset"> 16, 16 </vector2>
-		<resource name="13/occluder"></resource>		<vector2 name="13/navigation_offset"> 16, 16 </vector2>
-		<resource name="13/navigation"></resource>		<vector2 name="13/shape_offset"> 16, 16 </vector2>
-		<array name="13/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://1">  </resource>
-		</array>
-		<string name="14/name"> "groundend3" </string>
-		<resource name="14/texture" external="0">  </resource>
-		<vector2 name="14/tex_offset"> 0, 0 </vector2>
-		<resource name="14/material"></resource>		<rect2 name="14/region"> 192, 32, 32, 32 </rect2>
-		<vector2 name="14/occluder_offset"> 16, 16 </vector2>
-		<resource name="14/occluder"></resource>		<vector2 name="14/navigation_offset"> 16, 16 </vector2>
-		<resource name="14/navigation"></resource>		<vector2 name="14/shape_offset"> 16, 16 </vector2>
-		<array name="14/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://5">  </resource>
-		</array>
-		<string name="15/name"> "groundend4" </string>
-		<resource name="15/texture" external="0">  </resource>
-		<vector2 name="15/tex_offset"> 0, 0 </vector2>
-		<resource name="15/material"></resource>		<rect2 name="15/region"> 224, 32, 32, 32 </rect2>
-		<vector2 name="15/occluder_offset"> 16, 16 </vector2>
-		<resource name="15/occluder"></resource>		<vector2 name="15/navigation_offset"> 16, 16 </vector2>
-		<resource name="15/navigation"></resource>		<vector2 name="15/shape_offset"> 16, 16 </vector2>
-		<array name="15/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://5">  </resource>
 		</array>
 
 	</main_resource>

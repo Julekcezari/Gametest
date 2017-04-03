@@ -1,24 +1,36 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://sprites/Characters/Rabbit.png" type="Texture" id=2]
-[ext_resource path="res://sprites/Exclamation.png" type="Texture" id=3]
+[ext_resource path="res://sprites/Characters/bunny/2.png" type="Texture" id=2]
+[ext_resource path="res://sprites/Characters/bunny/3.png" type="Texture" id=3]
+[ext_resource path="res://sprites/Characters/bunny/1.png" type="Texture" id=4]
+[ext_resource path="res://sprites/Characters/bunny/4.png" type="Texture" id=5]
+[ext_resource path="res://sprites/Exclamation.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 4.91678, 4.00429 )
+extents = Vector2( 4.41749, 4.30181 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ { "frames":[ ExtResource( 2 ), ExtResource( 3 ) ], "loop":true, "name":"Walking", "speed":5.0 }, { "frames":[ ExtResource( 4 ) ], "loop":true, "name":"Idle", "speed":3.0 }, { "frames":[ ExtResource( 5 ) ], "loop":true, "name":"Jump", "speed":5.0 } ]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 13.2023, 11.0519 )
 
 [node name="player" type="Node2D"]
 
-transform/pos = Vector2( 24, -3 )
+transform/pos = Vector2( 24.2378, -3.95131 )
 
 [node name="Bunny" type="KinematicBody2D" parent="."]
 
-transform/pos = Vector2( -138.619, 220.914 )
+transform/pos = Vector2( -17.5619, 0.0469818 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1.22742, 0, 0, 1.15159, 0.901978, 5.85825 )
+shapes/0/transform = Matrix32( 1.22742, 0, 0, 1.16883, 0.901979, 4.98417 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -27,20 +39,22 @@ script/script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bunny"]
 
-transform/pos = Vector2( 0.901978, 5.85825 )
-transform/scale = Vector2( 1.22742, 1.15159 )
+transform/pos = Vector2( 0.901979, 4.98417 )
+transform/scale = Vector2( 1.22742, 1.16883 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Sprite" type="Sprite" parent="Bunny"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Bunny"]
 
-transform/pos = Vector2( 0.811874, 2.89956 )
-texture = ExtResource( 2 )
-flip_h = true
+transform/pos = Vector2( 1, 2 )
+frames = SubResource( 2 )
+animation = "Walking"
+playing = true
 
 [node name="Camera2D" type="Camera2D" parent="Bunny"]
 
+transform/pos = Vector2( 17.5619, -0.0469818 )
 anchor_mode = 1
 rotating = false
 current = true
@@ -49,20 +63,45 @@ limit/left = -10000000
 limit/top = -10000000
 limit/right = 10000000
 limit/bottom = 10000000
-limit/smoothed = false
+limit/smoothed = true
 drag_margin/h_enabled = false
 drag_margin/v_enabled = true
-smoothing/enable = false
-smoothing/speed = 5.0
+smoothing/enable = true
+smoothing/speed = 10.0
 drag_margin/left = 0.2
-drag_margin/top = 0.05
+drag_margin/top = 0.07
 drag_margin/right = 0.2
-drag_margin/bottom = 0.05
+drag_margin/bottom = 0.07
 
-[node name="sprite" type="Sprite" parent="Bunny"]
+[node name="reaction" type="Sprite" parent="Bunny"]
 
 visibility/visible = false
-transform/pos = Vector2( 5, -2 )
-texture = ExtResource( 3 )
+transform/pos = Vector2( -3, -3 )
+texture = ExtResource( 6 )
+
+[node name="Area2D" type="Area2D" parent="Bunny"]
+
+visibility/visible = false
+input/pickable = true
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 11.0748, 0, 0, 8.70001, 0.0133886, 0.637215 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+__meta__ = { "_edit_lock_":true }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bunny/Area2D"]
+
+transform/pos = Vector2( 0.0133886, 0.637215 )
+transform/scale = Vector2( 11.0748, 8.70001 )
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 0
+
+[connection signal="body_enter" from="Bunny/Area2D" to="Bunny" method="_on_Area2D_body_enter"]
+
+[connection signal="body_exit" from="Bunny/Area2D" to="Bunny" method="_on_Area2D_body_exit"]
 
 

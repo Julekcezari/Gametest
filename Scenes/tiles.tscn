@@ -5,32 +5,32 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 15.916, 15.9306 )
+extents = Vector2( 15.9998, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -16, 16, -16, -14, 13, 18 )
+points = Vector2Array( 16, 16, 16, 28, -16, 28, -16, -16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -7, 4.99985, 7, 4.99985, 12, 15.9998, -12, 15.9998 )
+points = Vector2Array( -11, 5.00005, 11, 5.00005, 11, 16, -11, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=4]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -10, 3, 10, 3, 16, 16, -16, 16 )
+points = Vector2Array( -13, 5.00005, 13, 5.00005, 13, 16, -13, 16 )
 
 [sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
-extents = Vector2( 15.2868, 15.6241 )
+extents = Vector2( 15.9998, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 16, -14, 16, 16, -13, 18 )
+points = Vector2Array( 16, -16, 16, 25, -16, 25, -16, 16 )
 
 [node name="tileset" type="Node2D"]
 
@@ -38,13 +38,15 @@ transform/pos = Vector2( 14.0972, 1.85115 )
 
 [node name="grassblock" type="Sprite" parent="."]
 
-transform/pos = Vector2( 99.8328, 67.141 )
+editor/display_folded = true
+transform/pos = Vector2( 62.9028, 33.1488 )
 texture = ExtResource( 1 )
 region = true
-region_rect = Rect2( 192, 0, 32, 32 )
+region_rect = Rect2( 32, 0, 32, 32 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="grassblock"]
 
+editor/display_folded = true
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -62,13 +64,14 @@ __meta__ = { "_edit_lock_":true }
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
+__meta__ = { "_edit_lock_":true }
 
 [node name="slopegrassblock" type="Sprite" parent="."]
 
-transform/pos = Vector2( 31.9028, 61.1488 )
+transform/pos = Vector2( 14.9028, 31.1488 )
 texture = ExtResource( 1 )
 region = true
-region_rect = Rect2( 160, 0, 32, 32 )
+region_rect = Rect2( 128, 0, 32, 32 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="slopegrassblock"]
 
@@ -88,17 +91,17 @@ __meta__ = { "_edit_lock_":true }
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="slopegrassblock/StaticBody2D"]
 
 build_mode = 0
-polygon = Vector2Array( 13, 18, -16, -14, -16, 16 )
+polygon = Vector2Array( -16, -16, -16, 28, 16, 28, 16, 16 )
 shape_range = Vector2( 0, 0 )
 trigger = false
 
 [node name="rock" type="Sprite" parent="."]
 
 editor/display_folded = true
-transform/pos = Vector2( 34.9028, 123.149 )
+transform/pos = Vector2( 72.9028, 83.1488 )
 texture = ExtResource( 1 )
 region = true
-region_rect = Rect2( 96, 0, 32, 32 )
+region_rect = Rect2( 64, 32, 32, 32 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="rock"]
 
@@ -117,17 +120,18 @@ __meta__ = { "_edit_lock_":true }
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="rock/StaticBody2D"]
 
 build_mode = 0
-polygon = Vector2Array( -12, 15.9998, 12, 15.9998, 7, 4.99985, -7, 4.99985 )
+polygon = Vector2Array( -11, 16, 11, 16, 11, 5.00005, -11, 5.00005 )
 shape_range = Vector2( 0, 0 )
 trigger = false
+__meta__ = { "_edit_lock_":true }
 
 [node name="trunk" type="Sprite" parent="."]
 
 editor/display_folded = true
-transform/pos = Vector2( 32.9028, 181.149 )
+transform/pos = Vector2( 22.9028, 86.1488 )
 texture = ExtResource( 1 )
 region = true
-region_rect = Rect2( 64, 0, 32, 32 )
+region_rect = Rect2( 32, 32, 32, 32 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="trunk"]
 
@@ -146,16 +150,17 @@ __meta__ = { "_edit_lock_":true }
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="trunk/StaticBody2D"]
 
 build_mode = 0
-polygon = Vector2Array( -16, 16, 16, 16, 10, 3, -10, 3 )
+polygon = Vector2Array( -13, 16, 13, 16, 13, 5.00005, -13, 5.00005 )
 shape_range = Vector2( 0, 0 )
 trigger = false
+__meta__ = { "_edit_lock_":true }
 
 [node name="dirtblock" type="Sprite" parent="."]
 
-transform/pos = Vector2( 107.616, 146.773 )
+transform/pos = Vector2( 119.903, 86.1488 )
 texture = ExtResource( 1 )
 region = true
-region_rect = Rect2( 128, 0, 32, 32 )
+region_rect = Rect2( 0, 0, 32, 32 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="dirtblock"]
 
@@ -176,27 +181,29 @@ __meta__ = { "_edit_lock_":true }
 shape = SubResource( 5 )
 trigger = false
 _update_shape_index = 0
+__meta__ = { "_edit_lock_":true }
 
 [node name="grass" type="Sprite" parent="."]
 
-transform/pos = Vector2( 172.903, 92.1488 )
+transform/pos = Vector2( 167.903, 33.1488 )
 texture = ExtResource( 1 )
 region = true
-region_rect = Rect2( 32, 0, 32, 32 )
+region_rect = Rect2( 160, 32, 32, 32 )
 
 [node name="grassf" type="Sprite" parent="."]
 
-transform/pos = Vector2( 232.94, 62.9629 )
+transform/pos = Vector2( 221.903, 35.1488 )
 texture = ExtResource( 1 )
 region = true
-region_rect = Rect2( 0, 0, 32, 32 )
+region_rect = Rect2( 96, 32, 32, 32 )
 
 [node name="slopegrassblock2" type="Sprite" parent="."]
 
-transform/pos = Vector2( 173.903, 68.1488 )
+editor/display_folded = true
+transform/pos = Vector2( 116.903, 33.1488 )
 texture = ExtResource( 1 )
 region = true
-region_rect = Rect2( 224, 0, 32, 32 )
+region_rect = Rect2( 160, 0, 32, 32 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="slopegrassblock2"]
 
@@ -216,8 +223,133 @@ __meta__ = { "_edit_lock_":true }
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="slopegrassblock2/StaticBody2D"]
 
 build_mode = 0
-polygon = Vector2Array( -13, 18, 16, 16, 16, -14 )
+polygon = Vector2Array( 16, -16, 16, 25, -16, 25, -16, 16 )
 shape_range = Vector2( 0, 0 )
 trigger = false
+
+[node name="Flowersr" type="Sprite" parent="."]
+
+transform/pos = Vector2( 21.9028, 139.149 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 128, 32, 32, 32 )
+
+[node name="grassend" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 173.903, 137.149 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 192, 0, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grassend"]
+
+editor/display_folded = true
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = { "_edit_lock_":true }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grassend/StaticBody2D"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+__meta__ = { "_edit_lock_":true }
+
+[node name="grassend2" type="Sprite" parent="."]
+
+transform/pos = Vector2( 220.903, 89.1488 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 0, 32, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grassend2"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = { "_edit_lock_":true }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grassend2/StaticBody2D"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+__meta__ = { "_edit_lock_":true }
+
+[node name="grassend3" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 226.903, 143.149 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 96, 0, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grassend3"]
+
+editor/display_folded = true
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = { "_edit_lock_":true }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grassend3/StaticBody2D"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+__meta__ = { "_edit_lock_":true }
+
+[node name="grassend4" type="Sprite" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 273.903, 143.149 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 64, 0, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grassend4"]
+
+editor/display_folded = true
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = { "_edit_lock_":true }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grassend4/StaticBody2D"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+__meta__ = { "_edit_lock_":true }
 
 
